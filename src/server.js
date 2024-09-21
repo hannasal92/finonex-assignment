@@ -22,7 +22,6 @@ let file_name = process.argv[2] ;
 if(!file_name){
   file_name = 'server_events.jsonl';
 }
-console.log("file_name "+file_name)
 
 // File to store incoming events
 const eventsFilePath = path.join(__dirname, './'+file_name);
