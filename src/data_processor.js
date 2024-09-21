@@ -11,8 +11,13 @@ const pool = new Pool({
   port: 5432,
 });
 
+// it is possible to pass the file name by the command 'node src/data_processor.js {FILENAME}'
+const file_name = process.argv[2] ;
+if(!file_name){
+  file_name = 'server_events.jsonl';
+}
 // path where the server saved the events 
-const eventsFilePath = path.join(__dirname, './server_events.jsonl');
+const eventsFilePath = path.join(__dirname, './'+file_name);
 
 // map to save the userid and the revenue , key = userid and value = revenue
 const userRevenueMap = new Map();
