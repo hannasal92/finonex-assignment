@@ -21,6 +21,15 @@ pg (PostgreSQL client for Node.js)
 
 2. npm install
 
+3. Configure PostgreSQL
+Set up your PostgreSQL database and create the necessary table:
+CREATE TABLE IF NOT EXISTS users_revenue (
+    user_id VARCHAR(255) PRIMARY KEY,
+    revenue INTEGER DEFAULT 0
+);
+
+
+
 4. Update Database Connection
  - in server.js and data_processor.js
 const pool = new Pool({
