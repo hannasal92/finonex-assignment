@@ -10,11 +10,11 @@ app.use(express.json()); // Middleware to parse JSON bodies
 
 // Database connection configuration
 const pool = new Pool({
-  user: 'postgres',         // Replace with your PostgreSQL username
+  user: 'postgres',
   host: 'localhost',
-  database: 'postgres',     // Replace with your PostgreSQL database name
-  password: 'Hanna12345', // Replace with your PostgreSQL password
-  port: 5432,                   // Default PostgreSQL port
+  database: 'postgres',
+  password: 'Hanna12345',
+  port: 5432,
 });
 
 // File to store incoming events
@@ -32,7 +32,7 @@ const auth = async (req, res, next) => {
 
 }
 
-//route 1 that insert the events inside the jsonl file
+//route 1 that insert the events inside the jsonl file and there is middleware auth to check authintication
 app.post('/liveEvent', auth, (req, res) => {
 
   const event = req.body;
@@ -57,7 +57,7 @@ app.post('/liveEvent', auth, (req, res) => {
   });
 });
 
-// route 2: get the data for a specefic user from the db
+// route 2: get the data for a specefic user from the db and there is middleware auth to check authintication
 app.get('/userEvents/:userid', auth, async (req, res) => {
   const userId = req.params.userid;
   try {
