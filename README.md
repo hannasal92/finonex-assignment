@@ -12,42 +12,42 @@ NPM (Node Package Manager)
 postgres DB that have one table called users_revenue ,two columns revenue and userid is the primary key (no need to add index to a priary key to help us in the search because by default the primary key have an index)
 
 ## Stack
-nodejs
-express
-pg (PostgreSQL client for Node.js)
+nodejs  
+express  
+pg (PostgreSQL client for Node.js)  
 
 ## Setup
 1. git clone https://github.com/hannasal92/finonex-assignment.git
 
 2. npm install
 
-3. Configure PostgreSQL
-Set up your PostgreSQL database and create the necessary table:
-CREATE TABLE IF NOT EXISTS users_revenue (
-    user_id VARCHAR(255) PRIMARY KEY,
-    revenue INTEGER DEFAULT 0
+3. Configure PostgreSQL  
+Set up your PostgreSQL database and create the necessary table:  
+CREATE TABLE IF NOT EXISTS users_revenue (  
+    user_id VARCHAR(255) PRIMARY KEY,  
+    revenue INTEGER DEFAULT 0  
 );
 
 
 
-4. Update Database Connection
- - in server.js and data_processor.js
-const pool = new Pool({
-  user: 'your-username',       
-  host: 'localhost',
-  database: 'your-database', 
-  password: 'your-password',
-  port: 5432,
+4. Update Database Connection   
+ - in server.js and data_processor.js  
+const pool = new Pool({  
+  user: 'your-username',         
+  host: 'localhost',  
+  database: 'your-database',   
+  password: 'your-password',  
+  port: 5432,  
 });
 
 5. Create Events File
 
 ## In order to run the project, run the following commands
-`npm install`
-`npm run dev` to run the server
-`node src/client.js` to run the client
-`node src/data_processor.js server_events.jsonl` to run the data processor and pass the filename where the events saved (can pass another filename)
-`node src/data_processor.js server_events.jsonl &; node src/data_processor.js server_events.jsonl &` to run multiple data_processor
+`npm install`  
+`npm run dev` to run the server  
+`node src/client.js` to run the client  
+`node src/data_processor.js server_events.jsonl` to run the data processor and pass the filename where the events saved (can pass another filename)  
+`node src/data_processor.js server_events.jsonl &; node src/data_processor.js   server_events.jsonl &` to run multiple data_processor  
 
 ## Developed by
 Hanna Salameh
