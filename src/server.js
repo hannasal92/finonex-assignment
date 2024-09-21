@@ -19,7 +19,8 @@ const pool = new Pool({
 
 // File to store incoming events
 const eventsFilePath = path.join(__dirname, './server_events.jsonl');
-var user_revenue_query = fs.readFileSync(__dirname+'/db.sql').toString()
+// get the query from db.sql ;
+// var user_revenue_query = fs.readFileSync(__dirname+'/db.sql').toString()
 
 const auth = async (req, res, next) => {
     const header_auth = req.headers['authorization'] ;
@@ -79,7 +80,8 @@ app.get('/userEvents/:userid', auth, async (req, res) => {
 app.listen(port, async () => {
   console.log(`Server is running on port ${port}`);
   try{
-    await pool.query(user_revenue_query);
+    // we can run the query to create table in DB but we can do it manually in the DB
+    // await pool.query(user_revenue_query);
   }catch(err){
     console.error('error in creating the table in the db');
   }
