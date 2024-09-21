@@ -4,9 +4,9 @@ this project have 3 main files the clients.js the extract the events from events
 ## Prerequisites
 Ensure the following are installed on your system:
 
-Node.js (v12+)
-PostgreSQL (v12+)
-NPM (Node Package Manager)
+Node.js (v12+)  
+PostgreSQL (v12+)  
+NPM (Node Package Manager)  
 
 ## DB 
 postgres DB that have one table called users_revenue ,two columns revenue and userid is the primary key (no need to add index to a priary key to help us in the search because by default the primary key have an index)
