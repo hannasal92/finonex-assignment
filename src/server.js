@@ -32,6 +32,7 @@ const auth = async (req, res, next) => {
 
 }
 
+//route 1 that insert the events inside the jsonl file
 app.post('/liveEvent', auth, (req, res) => {
 
   const event = req.body;
@@ -56,7 +57,7 @@ app.post('/liveEvent', auth, (req, res) => {
   });
 });
 
-// Endpoint 2: Serve user revenue data from the database
+// route 2: get the data for a specefic user from the db
 app.get('/userEvents/:userid', auth, async (req, res) => {
   const userId = req.params.userid;
   try {
@@ -79,11 +80,10 @@ app.get('/userEvents/:userid', auth, async (req, res) => {
 // Start the server
 app.listen(port, async () => {
   console.log(`Server is running on port ${port}`);
-  try{
+  //try{
     // we can run the query to create table in DB but we can do it manually in the DB
     // await pool.query(user_revenue_query);
-  }catch(err){
-    console.error('error in creating the table in the db');
-  }
-
+  // }catch(err){
+  //   console.error('error in creating the table in the db');
+  // }
 });
