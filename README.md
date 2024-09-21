@@ -47,7 +47,7 @@ const pool = new Pool({
 `npm run dev` to run the server  it is possible to pick the filename by adding to the command the filename `npm run dev {FILENAME.jsonl} or node src/server.js {FILENAME}`
 `node src/client.js` to run the client  
 `node src/data_processor.js server_events.jsonl` to run the data processor and pass the filename where the events saved (can pass another filename)  
-`node src/data_processor.js server_events.jsonl &; node src/data_processor.js   server_events.jsonl &` to run multiple data_processor  
+`node src/data_processor.js server_events.jsonl &; node src/data_processor.js {FILENAME}.jsonl &` to run multiple data_processor  
 
 ## Developed by
 Hanna Salameh
