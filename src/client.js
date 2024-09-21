@@ -43,3 +43,18 @@ rl.on('line', (line) => {
 rl.on('close', () => {
   console.log('All events have been processed.');
 });
+
+// send get request to the server to get the for a specefic
+// async function getEvents(){
+//   const result = await axios.get(BACKEND_URL+"/userEvents/user1",  {
+//   headers: {
+//     'Authorization': 'secret',
+//     'Content-Type': 'application/json',
+//   },});
+//   if(result.data){
+//     const { userid, revenue } = result.data ;
+//     console.log("the revenue that related to user "+userid+" is equals to "+revenue)
+//   }else{
+//     console.log("user not found")
+//   }
+// }

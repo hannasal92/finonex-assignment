@@ -12,7 +12,7 @@ const pool = new Pool({
 });
 
 // it is possible to pass the file name by the command 'node src/data_processor.js {FILENAME}'
-const file_name = process.argv[2] ;
+let file_name = process.argv[2] ;
 if(!file_name){
   file_name = 'server_events.jsonl';
 }
