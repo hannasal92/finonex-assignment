@@ -17,8 +17,15 @@ const pool = new Pool({
   port: 5432,
 });
 
+// it is possible to pass the file name by the command 'node src/server.js.js {FILENAME}' OR npm run dev {FILENAME}
+let file_name = process.argv[2] ;
+if(!file_name){
+  file_name = 'server_events.jsonl';
+}
+console.log("file_name "+file_name)
+
 // File to store incoming events
-const eventsFilePath = path.join(__dirname, './server_events.jsonl');
+const eventsFilePath = path.join(__dirname, './'+file_name);
 // get the query from db.sql ;
 // var user_revenue_query = fs.readFileSync(__dirname+'/db.sql').toString()
 
