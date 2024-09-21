@@ -44,7 +44,7 @@ const pool = new Pool({
 
 ## In order to run the project, run the following commands
 `npm install`  
-`npm run dev` to run the server  
+`npm run dev` to run the server  it is possible to pich the filename by adding to the command the filename `npm run dev {FILENAME.jsonl} or node src/server.js {FILENAME}`
 `node src/client.js` to run the client  
 `node src/data_processor.js server_events.jsonl` to run the data processor and pass the filename where the events saved (can pass another filename)  
 `node src/data_processor.js server_events.jsonl &; node src/data_processor.js   server_events.jsonl &` to run multiple data_processor  
