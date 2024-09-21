@@ -29,6 +29,7 @@ const eventsFilePath = path.join(__dirname, './'+file_name);
 // get the query from db.sql ;
 // var user_revenue_query = fs.readFileSync(__dirname+'/db.sql').toString()
 
+// Middleware to check the authorization 
 const auth = async (req, res, next) => {
     const header_auth = req.headers['authorization'] ;
 
